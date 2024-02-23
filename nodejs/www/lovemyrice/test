@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Autoplaying Carousel</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <style>
+        .carousel-item {
+            height: 300px;
+            background-color: #cccccc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Slides -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="image1.jpg" alt="Image 1">
+            </div>
+            <div class="carousel-item">
+                <img src="image2.jpg" alt="Image 2">
+            </div>
+            <div class="carousel-item">
+                <img src="image3.jpg" alt="Image 3">
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Slides -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="image1.jpg" alt="Image 1">
+            </div>
+            <div class="carousel-item">
+                <img src="image2.jpg" alt="Image 2">
+            </div>
+            <div class="carousel-item">
+                <img src="image3.jpg" alt="Image 3">
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+            <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional content.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container text-center mt">
+        <div class="card" style="width: 20rem;">
+            <img src="./Home/pic_4.jpg" class="card-img-top" alt="" height="200px" width="200px">
+            <div class="card-body">
+                <h5 class="card-title"><strong>ข้าว คืออะไร?</strong></h5>
+                <p class="card-text">เป็นเมล็ดของพืชในสกุลข้าวที่พบมากในเอเชีย ชื่อวิทยาศาสตร์: Oryza sativa
+                    ข้าวเป็นธัญพืชซึ่งประชากรโลกบริโภคเป็นอาหารสำคัญโดยเฉพาะอย่างยิ่งในทวีปเอเชียเเละ
+                    ข้าวเป็นธัญพืชสำคัญที่สุดในด้านโภชนาการและการได้รับแคลอรีของมนุษย์
+                    อีกทั้งข้าวคิดเป็นพลังงานกว่าหนึ่งในห้าที่มนุษย์ทั่วโลกบริโภค
+                    <br>
+                    <em>(ศูนย์วิทยาศาสตร์ข้าว,มหาวิทยาลัยเกษตรศาสตร์)</em>
+                </p>
+                <a href="https://dna.kps.ku.ac.th/index.php/rsc-news/new-rsc-rgd/news/205-rice-for-life"
+                    class="btn btn-primary" target="_blank">Read More</a>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-center mt">
+        <div class="card" style="width: 20rem;">
+            <img src="./Home/pic_5.jpg" class="card-img-top" alt="" height="200px" width="200px">
+            <div class="card-body">
+                <h5 class="card-title"><strong>ชนิดของพันธุ์ข้าวในประเทศไทย</strong></h5>
+                <p class="card-text">เเบ่งออกเป็น 13 ชนิด <br>
+                    1. พันธุ์ข้าวนาสวนไวต่อช่วงแสง <br>
+                    2. พันธุ์ข้าวนาสวนไม่ไวต่อช่วงแสง <br>
+                    3. พันธุ์ข้าวขึ้นน้ำไวต่อช่วงแสง <br>
+                    4. พันธุ์ข้าวน้ำลึกไวต่อช่วงแสง<br>
+                    5. พันธุ์ข้าวน้ำลึกไม่ไวต่อช่วงแสง<br>
+                    6. พันธุ์ข้าวไร่ไวต่อช่วงแสง<br>
+                    7. พันธุ์ข้าวไร่ไม่ไวต่อช่วงแสง<br>
+                    8. พันธุ์ข้าวแดงไม่ไวต่อช่วงแสง<br>
+                    9. พันธุ์ข้าวแดงไวต่อช่วงแสง<br>
+                    10. พันธุ์ข้าวญี่ปุ่น<br>
+                    11. พันธุ์ข้าวบาร์เลย์<br>
+                    12. พันธุ์ข้าวลูกผสม<br>
+                    13. พันธุ์ข้าวสาลี<br>
+                    <br>
+                    <em>(องค์ความรู้เรื่องข้าว,กองวิจัยเเละพัฒนาข้าว กรมการข้าว)</em>
+                </p>
+                <a href="https://www.ricethailand.go.th/rkb3/Varieties.htm" class="btn btn-primary" target="_blank">Read
+                    More</a>
+
+            </div>
+        </div>
+    </div>d
+</body>
+
+</html>

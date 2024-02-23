@@ -1,0 +1,32 @@
+body {
+    font-family: 'Itim', cursive;
+    font-size: 18px;
+
+}
+
+.mt {
+    margin-top: 35px;
+
+}
+
+.card-title {
+    font-size: 25px;
+}
+
+.card-text {
+    font-size: 18px;
+
+}
+
+
+.container {
+    text-align: center;
+}
+
+.a {
+    text-decoration: underline;
+}
+
+.navbar-brand {
+    font-size: 26px;
+}

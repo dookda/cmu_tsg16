@@ -1,0 +1,17 @@
+body {
+    font-family: 'Itim', cursive;
+    font-size: 18px;
+}
+
+.mt {
+    margin-top: 30px;
+}
+
+.container-fluid-sm {
+    text-align: center;
+}
+
+.btn {
+    width: 100px;
+    height: 50px;
+}

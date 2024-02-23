@@ -1,0 +1,24 @@
+{
+  "name": "project_499",
+  "version": "1.0.0",
+  "description": "499 project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Guitarnatnicha/Project_499.git"
+  },
+  "author": "natnicha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Guitarnatnicha/Project_499/issues"
+  },
+  "homepage": "https://github.com/Guitarnatnicha/Project_499#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "get-image-colors": "^4.0.1"
+  }
+}
