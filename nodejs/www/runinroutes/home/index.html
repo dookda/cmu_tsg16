@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>map</title>
+    <title>ค้นหาเส้นทางวิ่ง</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 
     <link rel="stylesheet" href="./bootstrap.css">
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/7fb834ff47.js" crossorigin="anonymous"></script>
+
 
 </head>
 
@@ -25,25 +25,22 @@
             <div class="collapse navbar-collapse" id="navbarColor02">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">ค้นหาเส้นทางวิ่ง
+                        <a class="nav-link active" href="./../Home/index.html">ค้นหาเส้นทางวิ่ง
                             <span class="visually-hidden">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">เส้นทางวิ่งใกล้ฉัน</a>
+                        <a class="nav-link" href="./../near/index.html">เส้นทางวิ่งใกล้ฉัน</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">ข้อมูล</a>
+                        <a class="nav-link" href="#">คู่มือการใช้งาน</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">เพิ่มเส้นทางวิ่งด้วยตนเอง</a>
+                        <a class="nav-link" href="#">สอบถามเพิ่มเติม</a>
                     </li>
 
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control me-sm-2" type="search" placeholder="Search">
-                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                </form>
+
             </div>
         </div>
     </nav>
@@ -51,7 +48,7 @@
     <header>
         <h4
             style="background-color: rgb(255, 102, 0); padding-top: 15px;padding-bottom: 20px; text-align: center;font-size: 25px; color: rgb(255, 255, 255);">
-            <b>Routes Map</b>
+            <b>ค้นหาเส้นทางวิ่ง</b>
 
         </h4>
     </header>
@@ -61,58 +58,51 @@
     <div class="container">
         <form>
             <fieldset>
-                <legend>กรุณากรอกข้อมูลเพื่อหาเส้นทางวิ่งที่ต้องการ</legend>
+                <legend>เลือกตัวเลือกเพื่อหาเส้นทางวิ่งที่ต้องการ</legend>
                 <div class="form-group">
-                    <label class="col-form-label mt-2" for="inputDefault">กรอกระยะทางที่ท่านต้องการวิ่ง:</label>
-                    <!-- <input type="number" class="form-control" placeholder="กิโลเมตร(km)" id="length"> -->
+                    <label class="col-form-label" for="inputDefault">ระยะทางที่ท่านต้องการวิ่ง:</label>
+
                     <select class="form-select" id="length">
-                        <option value="400">น้อยกว่า 400 m</option>
-                        <option value="600">400-600 m</option>
-                        <option value="800">601-800 m</option>
-                        <option value="1000">801-1000 m</option>
-                        <option value="2000">มากกว่า 1000m</option>
+                        <option value="0.5"> 500 เมตร</option>
+                        <option value="1"> 1 กิโลเมตร</option>
+                        <option value="5"> 5 กิโลเมตร</option>
+                        <option value="10"> 10 กิโลเมตร</option>
+                        <option value="15"> 15 กิโลเมตร</option>
+                        <option value="20"> 20 กิโลเมตร</option>
+                        <option value="32"> 30 กิโลเมตร</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label for="exampleSelect1" class="form-label mt-4">ระดับความสูงเฉลี่ยที่ท่านต้องการ(เมตร):</label>
-                    <select class="form-select" id="dem">
-                        <option value="400">น้อยกว่า 400 m</option>
-                        <option value="600">400-600 m</option>
-                        <option value="800">601-800 m</option>
-                        <option value="1000">801-1000 m</option>
-                        <option value="2000">มากกว่า 1000m</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="exampleSelect1"
-                        class="form-label mt-4">ระดับความลาดชันสูงสุดที่ท่านต้องการ(องศา):</label>
-                    <select class="form-select" id="slope">
-                        <option value="10">น้อยกว่า 10°</option>
-                        <option value="20">10°-20°</option>
-                        <option value="30">21°-30°</option>
-                        <option value="40">31°-40°</option>
-                        <option value="50">41°-50°</option>
-                    </select>
-                </div>
-                <fieldset class="form-group">
-                    <legend class="mt-4">สภาพพื้นผิวเส้นทางที่ต้องการ</legend>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="optionsRadios" id="optionsRadios1"
-                            value="option1" checked="">
-                        <label class="form-check-label" for="optionsRadios1">
-                            เรียบ
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="optionsRadios" id="optionsRadios2"
-                            value="option2">
-                        <label class="form-check-label" for="optionsRadios2">
-                            ขรุขระ
-                        </label>
-                    </div>
-                </fieldset>
                 <br>
-                <button type="button" class="btn btn-warning btn-lg" onclick="sendData()">ค้นหาเส้นทางวิ่ง</button>
+                <div class="form-group">
+                    <label for="exampleSelect1" class="form-label">ความกว้างของเส้นทางที่ต้องการ (เมตร):</label>
+                    <select class="form-select" id="wide">
+                        <option value="1">แคบ (< 1 m)</option>
+                        <option value="3">ปานกลาง (1-3 m)</option>
+                        <option value="12">กว้าง (3 m ขึ้นไป)</option>
+                    </select>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="exampleSelect1" class="form-label">ระดับความสูงเฉลี่ยที่ท่านต้องการ(เมตร):</label>
+                    <select class="form-select" id="dem">
+                        <option value="400">ต่ำ</option>
+                        <option value="800">ปานกลาง</option>
+                        <option value="1700">สูง</option>
+                    </select>
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="exampleSelect1" class="form-label">ระดับความลาดชันที่ท่านต้องการ:</label>
+                    <select class="form-select" id="slope">
+                        <option value="10">น้อย</option>
+                        <option value="20">ปานกลาง</option>
+                        <option value="30">มาก</option>
+                    </select>
+                </div>
+
+                <br>
+                <center><button type="button" class="btn btn-warning btn-lg"
+                        onclick="sendData()">ค้นหาเส้นทางวิ่ง</button></center>
             </fieldset>
 
         </form>
@@ -122,34 +112,19 @@
 
 
     <br>
-    <div style="text-align: center;">
-        <B style="font-size: 25px; color: rgb(82, 80, 80);">Record </B>
-        <button id="startButton" type="button" class="btn btn-dark">Start</button>
-        <button id="pauseButton" type="button" class="btn btn-danger">Stop</button>
-        <button id="clearButton" type="button" class="btn btn-secondary">Reset</button>
-        <h2 id="timeDisplay">เวลาที่ผ่านไป: <b>00:00:00</b> </h2>
-    </div>
-
-
-
-    <div class="container mt-3">
+    <div class="container">
         <div id="map"></div>
+        <br>
+        <div class="" id="rlist"></div>
     </div>
 
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <footer style="background-color: rgba(224, 224, 224, 0.562); padding: 60px;">
-
-    </footer>
 
 </body>
 
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 <script src="./app.js"></script>
 
 </html>

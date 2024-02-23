@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 const pg = new Pool({
     host: "tsg_postgis",
     user: 'postgres',
-    password: "123",
+    password: "1234",
     database: "geodb",
     port: 5432
 });
@@ -91,7 +91,6 @@ app.post("/api/postcolor", (req, res) => {
 })
 
 // ponpan area
-
 app.get("/items", (req, res) => {
     let sql = "SELECT * FROM items";
 
@@ -112,6 +111,56 @@ app.get("/items/:id", (req, res) => {
 app.post('/postgeojson', (req, res) => {
     const { data } = req.body;
     console.log(data);
+
+})
+
+// ค้นหาเส้นทางวิ่งตามปัจจัย
+app.get("/routegeom620/:length/:wide/:dem/:slope", (req, res) => {
+    const { length, wide, dem, slope } = req.params;
+    let sql = `SELECT *, ST_AsGeoJSON(geom) as json FROM public.routegeom620
+                WHERE length<=${length} and wide<= ${wide}  and demx<=${dem} and slopex<=${slope}`
+
+    console.log(sql);
+    pg.query(sql).then((data) => {
+        res.json(data.rows)
+    })
+})
+
+// ค้นหาเส้นทางตามid
+app.get("/routesid/:id", (req, res) => {
+    const { id } = req.params;
+    let sql = `SELECT id, name,length,wide,demmin, demmax, slopemin, slopemax, asmean, surface, ct, ST_AsGeoJSON(geom) as json FROM public.routegeom620
+                WHERE id= ${id}`
+
+    console.log(sql);
+    pg.query(sql).then((data) => {
+        res.json(data.rows)
+    })
+})
+
+app.get("/nifoid/:id", (req, res) => {
+    const { id } = req.params;
+    let sql = `SELECT id, name,length,wide,demmin, demmax, slopemin, slopemax, asmean, surface, ct, ST_AsGeoJSON(geom) as json FROM public.routegeom620
+                WHERE id= ${id}`
+
+    console.log(sql);
+    pg.query(sql).then((data) => {
+        res.json(data.rows)
+    })
+})
+
+// ค้นหาเส้นทางรอบตัว
+app.get("/selectbyGPS/:lat/:lng/:radius", (req, res) => {
+    const { lat, lng, radius } = req.params;
+    let sql = `SELECT *, ST_AsGeoJSON(r.geom) as json
+                FROM routegeom620 r, 
+                st_geomfromtext('POINT(${lng} ${lat})',4326) me
+                WHERE  st_dwithin(st_transform(r.geom, 32647), st_transform(me, 32647), ${radius}) = true`
+
+    console.log(sql);
+    pg.query(sql).then((data) => {
+        res.json(data.rows)
+    })
 })
 
 
