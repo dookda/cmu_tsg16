@@ -42,21 +42,21 @@ var amphoe = L.tileLayer.wms("https://engrids.soc.cmu.ac.th/geoserver/CM/wms?", 
 
 })
 
-var aspect_std = L.tileLayer.wms("/geoserver/raster/wms?", {
+var aspect_std = L.tileLayer.wms("https://engrids.soc.cmu.ac.th/geoserver/raster/wms?", {
     layers: "raster:aspect_std",
     format: "image/png",
     transparent: true
 
 })
 
-var dem_std = L.tileLayer.wms("/geoserver/raster/wms?", {
+var dem_std = L.tileLayer.wms("https://engrids.soc.cmu.ac.th/geoserver/raster/wms?", {
     layers: "raster:dem_std",
     format: "image/png",
     transparent: true
 
 })
 
-var slope_std = L.tileLayer.wms("/geoserver/raster/wms?", {
+var slope_std = L.tileLayer.wms("https://engrids.soc.cmu.ac.th/geoserver/raster/wms?", {
     layers: "raster:slope_std",
     format: "image/png",
     transparent: true
@@ -76,11 +76,11 @@ var slope_std = L.tileLayer.wms("/geoserver/raster/wms?", {
 
 // เพิ่มปุ่มเลือกเลเยอร์แผนที่
 var basemap = {
-    "แผนที่ Stadia_StamenTerrain ": Stadia_StamenTerrain.addTo(map),
+    "แผนที่ Stadia_StamenTerrain ": Stadia_StamenTerrain,
     "แผนที่ WorldImagery": Esri_WorldImagery,
     "แผนที่ OpenTopoMap": OpenTopoMap,
     "แผนที่ osm": osm,
-    "แผนที่ Google Map": Googlemap
+    "แผนที่ Google Map": Googlemap.addTo(map)
 }
 
 
