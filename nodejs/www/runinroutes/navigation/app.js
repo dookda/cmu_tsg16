@@ -113,11 +113,11 @@ var slope_std = L.tileLayer.wms("https://engrids.soc.cmu.ac.th/geoserver/raster/
 
 // เพิ่มปุ่มเลือกเลเยอร์แผนที่
 var basemap = {
-    "แผนที่ Stadia_StamenTerrain ": Stadia_StamenTerrain.addTo(map),
+    "แผนที่ Stadia_StamenTerrain ": Stadia_StamenTerrain,
     "แผนที่ WorldImagery": Esri_WorldImagery,
     "แผนที่ OpenTopoMap": OpenTopoMap,
     "แผนที่ osm": osm,
-    "แผนที่ Google Map": Googlemap
+    "แผนที่ Google Map": Googlemap.addTo(map)
 }
 
 
