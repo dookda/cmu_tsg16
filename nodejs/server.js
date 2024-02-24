@@ -5,8 +5,16 @@ const getColors = require('get-image-colors')
 const { Pool } = require("pg");
 const bodyParser = require("body-parser");
 
+// app.use(bodyParser.json({ limit: '50mb' }));
+// app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
+
 app.use(bodyParser.json({ limit: '50mb' }));
-app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
+app.use(bodyParser.urlencoded({
+    limit: '50mb',
+    extended: true,
+    parameterLimit: 50000
+}));
+
 
 const pg = new Pool({
     host: "tsg_postgis",
