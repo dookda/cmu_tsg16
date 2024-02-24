@@ -134,7 +134,7 @@ function sendData() {
 
     // console.log(length, wide, dem, slope)
 
-    axios.get(`/routegeom620/${length}/${wide}/${dem}/${slope}`).then(res => {
+    axios.get(`/runinroutes/routegeom620/${length}/${wide}/${dem}/${slope}`).then(res => {
 
         var myStyle = {
             "color": "#ff7800",

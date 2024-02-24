@@ -128,7 +128,7 @@ function r1000() {
     var lat = document.getElementById("lat").value
     var lng = document.getElementById("lng").value
     console.log(lat, lng)
-    axios.get(`/selectbyGPS/${lat}/${lng}/1000`)
+    axios.get(`/runinroutes/selectbyGPS/${lat}/${lng}/1000`)
         .then(res => {
             console.log(res)
 
@@ -195,7 +195,7 @@ function r2000() {
     var lat = document.getElementById("lat").value
     var lng = document.getElementById("lng").value
     console.log(lat, lng)
-    axios.get(`/selectbyGPS/${lat}/${lng}/2000`)
+    axios.get(`/runinroutes/selectbyGPS/${lat}/${lng}/2000`)
         .then(res => {
             console.log(res)
 
@@ -262,7 +262,7 @@ function r3000() {
     var lat = document.getElementById("lat").value
     var lng = document.getElementById("lng").value
     console.log(lat, lng)
-    axios.get(`/selectbyGPS/${lat}/${lng}/3000`)
+    axios.get(`/runinroutes/selectbyGPS/${lat}/${lng}/3000`)
         .then(res => {
             console.log(res)
 
@@ -329,7 +329,7 @@ function r4000() {
     var lat = document.getElementById("lat").value
     var lng = document.getElementById("lng").value
     console.log(lat, lng)
-    axios.get(`/selectbyGPS/${lat}/${lng}/4000`)
+    axios.get(`/runinroutes/selectbyGPS/${lat}/${lng}/4000`)
         .then(res => {
             console.log(res)
 
@@ -396,7 +396,7 @@ function r5000() {
     var lat = document.getElementById("lat").value
     var lng = document.getElementById("lng").value
     console.log(lat, lng)
-    axios.get(`/selectbyGPS/${lat}/${lng}/5000`)
+    axios.get(`/runinroutes/selectbyGPS/${lat}/${lng}/5000`)
         .then(res => {
             console.log(res)
 
