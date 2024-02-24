@@ -48,7 +48,7 @@ function calNDVI(r, g) {
     return { NDVI }
 }
 
-app.get("/api/getcolor", (req, res) => {
+app.get("/lovemyrice/getcolor", (req, res) => {
     const options = {
         count: 4,
         // type: 'image/jpg'
@@ -73,7 +73,7 @@ app.get("/api/getcolor", (req, res) => {
     })
 })
 
-app.post("/api/postcolor", (req, res) => {
+app.post("/lovemyrice/postcolor", (req, res) => {
     const { img } = req.body;
 
     const options = { count: 1 }
