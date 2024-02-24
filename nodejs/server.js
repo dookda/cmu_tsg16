@@ -91,7 +91,7 @@ app.post("/api/postcolor", (req, res) => {
 })
 
 // ponpan area
-app.get("/items", (req, res) => {
+app.get("/runinroutes/items", (req, res) => {
     let sql = "SELECT * FROM items";
 
     pg.query(sql).then((data) => {
@@ -99,7 +99,7 @@ app.get("/items", (req, res) => {
     })
 })
 
-app.get("/items/:id", (req, res) => {
+app.get("/runinroutes/items/:id", (req, res) => {
     const { id } = req.params;
     let sql = "SELECT * FROM items WHERE id=" + id;
     console.log(sql);
@@ -108,14 +108,14 @@ app.get("/items/:id", (req, res) => {
     })
 })
 
-app.post('/postgeojson', (req, res) => {
+app.post('/runinroutes/postgeojson', (req, res) => {
     const { data } = req.body;
     console.log(data);
 
 })
 
 // ค้นหาเส้นทางวิ่งตามปัจจัย
-app.get("/routegeom620/:length/:wide/:dem/:slope", (req, res) => {
+app.get("/runinroutes/routegeom620/:length/:wide/:dem/:slope", (req, res) => {
     const { length, wide, dem, slope } = req.params;
     let sql = `SELECT *, ST_AsGeoJSON(geom) as json FROM public.routegeom620
                 WHERE length<=${length} and wide<= ${wide}  and demx<=${dem} and slopex<=${slope}`
@@ -127,7 +127,7 @@ app.get("/routegeom620/:length/:wide/:dem/:slope", (req, res) => {
 })
 
 // ค้นหาเส้นทางตามid
-app.get("/routesid/:id", (req, res) => {
+app.get("/runinroutes/routesid/:id", (req, res) => {
     const { id } = req.params;
     let sql = `SELECT id, name,length,wide,demmin, demmax, slopemin, slopemax, asmean, surface, ct, ST_AsGeoJSON(geom) as json FROM public.routegeom620
                 WHERE id= ${id}`
@@ -138,7 +138,7 @@ app.get("/routesid/:id", (req, res) => {
     })
 })
 
-app.get("/nifoid/:id", (req, res) => {
+app.get("/runinroutes/nifoid/:idnifoid/:id", (req, res) => {
     const { id } = req.params;
     let sql = `SELECT id, name,length,wide,demmin, demmax, slopemin, slopemax, asmean, surface, ct, ST_AsGeoJSON(geom) as json FROM public.routegeom620
                 WHERE id= ${id}`
@@ -150,7 +150,7 @@ app.get("/nifoid/:id", (req, res) => {
 })
 
 // ค้นหาเส้นทางรอบตัว
-app.get("/selectbyGPS/:lat/:lng/:radius", (req, res) => {
+app.get("/runinroutes/selectbyGPS/:lat/:lng/:radius", (req, res) => {
     const { lat, lng, radius } = req.params;
     let sql = `SELECT *, ST_AsGeoJSON(r.geom) as json
                 FROM routegeom620 r, 
