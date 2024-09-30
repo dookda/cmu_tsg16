@@ -1,6 +1,6 @@
 const colorPalette = require("get-image-colors");
 
-axios.get("/api/getcolor").then(res => {
+axios.get("/tsg16/api/getcolor").then(res => {
     // console.log(res);
     res.data.forEach(i => {
         console.log(i._rgb[0]);

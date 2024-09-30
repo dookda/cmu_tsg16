@@ -56,7 +56,7 @@ const uploadImage = async (e) => {
 };
 
 const sendToServer = () => {
-    axios.post("/lovemyrice/postcolor", { img: base64 })
+    axios.post("/tsg16/lovemyrice/postcolor", { img: base64 })
         .then(res => {
             console.log(res.data.data[0]);
             let data = res.data.data[0]

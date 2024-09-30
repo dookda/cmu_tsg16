@@ -128,7 +128,7 @@ function r1000() {
     var lat = document.getElementById("lat").value
     var lng = document.getElementById("lng").value
     console.log(lat, lng)
-    axios.get(`/runinroutes/selectbyGPS/${lat}/${lng}/1000`)
+    axios.get(`/tsg16/runinroutes/selectbyGPS/${lat}/${lng}/1000`)
         .then(res => {
             console.log(res)
 
@@ -162,7 +162,7 @@ function r1000() {
                         <b> ความสูงของภูมิประเทศ :</b> <img src="./up-arrow.png" alt="width="50" height="20">  ${i.demmax} เมตร
                                                 <img src="./down-arrow.png" alt="width="50" height="20">  ${i.demmin} เมตร
                         </p>
-                            <a href="./../navigation/index.html?id=${i.id}" type="button" class="btn btn-light">ไปยังเส้นทาง</a>
+                            <a href="./../../navigation/index.html?id=${i.id}" type="button" class="btn btn-light">ไปยังเส้นทาง</a>
                     </div>
                 </div>`
 
@@ -195,7 +195,7 @@ function r2000() {
     var lat = document.getElementById("lat").value
     var lng = document.getElementById("lng").value
     console.log(lat, lng)
-    axios.get(`/runinroutes/selectbyGPS/${lat}/${lng}/2000`)
+    axios.get(`/tsg16/runinroutes/selectbyGPS/${lat}/${lng}/2000`)
         .then(res => {
             console.log(res)
 
@@ -229,7 +229,7 @@ function r2000() {
                         <b> ความสูงของภูมิประเทศ :</b> <img src="./up-arrow.png" alt="width="50" height="20">  ${i.demmax} เมตร
                                                 <img src="./down-arrow.png" alt="width="50" height="20">  ${i.demmin} เมตร
                         </p>
-                            <a href="./../navigation/index.html?id=${i.id}" type="button" class="btn btn-light">ไปยังเส้นทาง</a>
+                            <a href="./../../navigation/index.html?id=${i.id}" type="button" class="btn btn-light">ไปยังเส้นทาง</a>
                     </div>
                 </div>`
 
@@ -262,7 +262,7 @@ function r3000() {
     var lat = document.getElementById("lat").value
     var lng = document.getElementById("lng").value
     console.log(lat, lng)
-    axios.get(`/runinroutes/selectbyGPS/${lat}/${lng}/3000`)
+    axios.get(`/tsg16/runinroutes/selectbyGPS/${lat}/${lng}/3000`)
         .then(res => {
             console.log(res)
 
@@ -296,7 +296,7 @@ function r3000() {
                         <b> ความสูงของภูมิประเทศ :</b> <img src="./up-arrow.png" alt="width="50" height="20">  ${i.demmax} เมตร
                                                 <img src="./down-arrow.png" alt="width="50" height="20">  ${i.demmin} เมตร
                         </p>
-                            <a href="./../navigation/index.html?id=${i.id}" type="button" class="btn btn-light">ไปยังเส้นทาง</a>
+                            <a href="./../../navigation/index.html?id=${i.id}" type="button" class="btn btn-light">ไปยังเส้นทาง</a>
                     </div>
                 </div>`
 
@@ -329,7 +329,7 @@ function r4000() {
     var lat = document.getElementById("lat").value
     var lng = document.getElementById("lng").value
     console.log(lat, lng)
-    axios.get(`/runinroutes/selectbyGPS/${lat}/${lng}/4000`)
+    axios.get(`/tsg16/runinroutes/selectbyGPS/${lat}/${lng}/4000`)
         .then(res => {
             console.log(res)
 
@@ -363,7 +363,7 @@ function r4000() {
                         <b> ความสูงของภูมิประเทศ :</b> <img src="./up-arrow.png" alt="width="50" height="20">  ${i.demmax} เมตร
                                                 <img src="./down-arrow.png" alt="width="50" height="20">  ${i.demmin} เมตร
                         </p>
-                            <a href="./../navigation/index.html?id=${i.id}" type="button" class="btn btn-light">ไปยังเส้นทาง</a>
+                            <a href="./../../navigation/index.html?id=${i.id}" type="button" class="btn btn-light">ไปยังเส้นทาง</a>
                     </div>
                 </div>`
 
@@ -396,7 +396,7 @@ function r5000() {
     var lat = document.getElementById("lat").value
     var lng = document.getElementById("lng").value
     console.log(lat, lng)
-    axios.get(`/runinroutes/selectbyGPS/${lat}/${lng}/5000`)
+    axios.get(`/tsg16/runinroutes/selectbyGPS/${lat}/${lng}/5000`)
         .then(res => {
             console.log(res)
 
@@ -430,7 +430,7 @@ function r5000() {
                         <b> ความสูงของภูมิประเทศ :</b> <img src="./up-arrow.png" alt="width="50" height="20">  ${i.demmax} เมตร
                                                 <img src="./down-arrow.png" alt="width="50" height="20">  ${i.demmin} เมตร
                         </p>
-                            <a href="./../navigation/index.html?id=${i.id}" type="button" class="btn btn-light">ไปยังเส้นทาง</a>
+                            <a href="./../../navigation/index.html?id=${i.id}" type="button" class="btn btn-light">ไปยังเส้นทาง</a>
                     </div>
                 </div>`
 

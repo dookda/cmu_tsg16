@@ -134,7 +134,7 @@ function sendData() {
 
     // console.log(length, wide, dem, slope)
 
-    axios.get(`/runinroutes/routegeom620/${length}/${wide}/${dem}/${slope}`).then(res => {
+    axios.get(`/tsg16/runinroutes/routegeom620/${length}/${wide}/${dem}/${slope}`).then(res => {
 
         var myStyle = {
             "color": "#ff7800",
@@ -171,7 +171,7 @@ function sendData() {
                     <b> ความสูงของภูมิประเทศ :</b> <img src="./up-arrow.png" alt="width="50" height="20">  ${i.demmax} เมตร
                                             <img src="./down-arrow.png" alt="width="50" height="20">  ${i.demmin} เมตร
                     </p>
-                        <a href="./../navigation/index.html?id=${i.id}" type="button" class="btn btn-light">ไปยังเส้นทาง</a>
+                        <a href="./../../navigation/index.html?id=${i.id}" type="button" class="btn btn-light">ไปยังเส้นทาง</a>
                 </div>
             </div>`
 

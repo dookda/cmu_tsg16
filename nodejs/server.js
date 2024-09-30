@@ -17,7 +17,7 @@ const pg = new Pool({
 });
 app.use(express.json());
 
-app.use('/', express.static('www'))
+app.use('/tsg16', express.static('www'))
 
 app.listen(3000, () => {
     console.log("Running on http://localhost:3000")
@@ -48,7 +48,7 @@ function calNDVI(r, g) {
     return { NDVI }
 }
 
-app.get("/lovemyrice/getcolor", (req, res) => {
+app.get("/tsg16/lovemyrice/getcolor", (req, res) => {
     const options = {
         count: 4,
         // type: 'image/jpg'
@@ -73,7 +73,7 @@ app.get("/lovemyrice/getcolor", (req, res) => {
     })
 })
 
-app.post("/lovemyrice/postcolor", (req, res) => {
+app.post("/tsg16/lovemyrice/postcolor", (req, res) => {
     const { img } = req.body;
 
     const options = { count: 1 }
@@ -91,7 +91,7 @@ app.post("/lovemyrice/postcolor", (req, res) => {
 })
 
 // ponpan area
-app.get("/runinroutes/items", (req, res) => {
+app.get("/tsg16/runinroutes/items", (req, res) => {
     let sql = "SELECT * FROM items";
 
     pg.query(sql).then((data) => {
@@ -99,7 +99,7 @@ app.get("/runinroutes/items", (req, res) => {
     })
 })
 
-app.get("/runinroutes/items/:id", (req, res) => {
+app.get("/tsg16/runinroutes/items/:id", (req, res) => {
     const { id } = req.params;
     let sql = "SELECT * FROM items WHERE id=" + id;
     console.log(sql);
@@ -108,14 +108,14 @@ app.get("/runinroutes/items/:id", (req, res) => {
     })
 })
 
-app.post('/runinroutes/postgeojson', (req, res) => {
+app.post('/tsg16/runinroutes/postgeojson', (req, res) => {
     const { data } = req.body;
     console.log(data);
 
 })
 
 // ค้นหาเส้นทางวิ่งตามปัจจัย
-app.get("/runinroutes/routegeom620/:length/:wide/:dem/:slope", (req, res) => {
+app.get("/tsg16/runinroutes/routegeom620/:length/:wide/:dem/:slope", (req, res) => {
     const { length, wide, dem, slope } = req.params;
     let sql = `SELECT *, ST_AsGeoJSON(geom) as json FROM public.routegeom620
                 WHERE length<=${length} and wide<= ${wide}  and demx<=${dem} and slopex<=${slope}`
@@ -127,7 +127,7 @@ app.get("/runinroutes/routegeom620/:length/:wide/:dem/:slope", (req, res) => {
 })
 
 // ค้นหาเส้นทางตามid
-app.get("/runinroutes/routesid/:id", (req, res) => {
+app.get("/rtsg16/uninroutes/routesid/:id", (req, res) => {
     const { id } = req.params;
     let sql = `SELECT id, name,length,wide,demmin, demmax, slopemin, slopemax, asmean, surface, ct, ST_AsGeoJSON(geom) as json FROM public.routegeom620
                 WHERE id= ${id}`
@@ -138,7 +138,7 @@ app.get("/runinroutes/routesid/:id", (req, res) => {
     })
 })
 
-app.get("/runinroutes/nifoid/:idnifoid/:id", (req, res) => {
+app.get("/tsg16/runinroutes/nifoid/:idnifoid/:id", (req, res) => {
     const { id } = req.params;
     let sql = `SELECT id, name,length,wide,demmin, demmax, slopemin, slopemax, asmean, surface, ct, ST_AsGeoJSON(geom) as json FROM public.routegeom620
                 WHERE id= ${id}`
@@ -150,7 +150,7 @@ app.get("/runinroutes/nifoid/:idnifoid/:id", (req, res) => {
 })
 
 // ค้นหาเส้นทางรอบตัว
-app.get("/runinroutes/selectbyGPS/:lat/:lng/:radius", (req, res) => {
+app.get("/tsg16/runinroutes/selectbyGPS/:lat/:lng/:radius", (req, res) => {
     const { lat, lng, radius } = req.params;
     let sql = `SELECT *, ST_AsGeoJSON(r.geom) as json
                 FROM routegeom620 r, 

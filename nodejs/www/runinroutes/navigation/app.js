@@ -196,7 +196,7 @@ const id = urlParams.get('id')
 console.log(id);
 
 
-axios.get(`/runinroutes/routesid/${id}`).then(res => {
+axios.get(`/tsg16/runinroutes/routesid/${id}`).then(res => {
 
     var myStyle = {
         "color": "#ff7800",
